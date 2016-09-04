@@ -10,4 +10,5 @@ import Foundation
 
 protocol DataTask {
     func resume()
+    func currentURLRequest() -> NSURLRequest?
 }

@@ -15,29 +15,7 @@ final class TodoListFlowControllerTests: FBSnapshotTestCase {
         super.setUp()
         recordMode = false
     }
-    
-    private struct TestDataTask: DataTask {
-        func resume() { }
-    }
-    
-    private struct TestSession: Session {
-        
-        private let JSON: String
-        
-        init(JSON: String) {
-            self.JSON = JSON
-        }
-        
-        func dataTaskWithURL(url: NSURL, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> DataTask {
             
-            let data =  JSON.dataUsingEncoding(NSUTF8StringEncoding)
-            
-            completionHandler(data, nil, nil)
-            
-            return TestDataTask()
-        }
-    }
-    
     private struct TestDispatcher: CompletionHandlerDispatcher {
         func dispatch(f: () -> ()) { f() }
     }

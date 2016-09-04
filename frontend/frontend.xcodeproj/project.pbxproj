@@ -39,6 +39,8 @@
 		B9F6F71E1D7BEAA500A2F606 /* AddTodoFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6F71D1D7BEAA500A2F606 /* AddTodoFlowControllerTests.swift */; };
 		B9F6F7201D7CAA3700A2F606 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6F71F1D7CAA3700A2F606 /* JSON.swift */; };
 		B9F6F7221D7CAB1300A2F606 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6F7211D7CAB1300A2F606 /* PostRequest.swift */; };
+		B9F6F7241D7CAE8600A2F606 /* PostJSONRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6F7231D7CAE8600A2F606 /* PostJSONRequestTests.swift */; };
+		B9F6F7271D7CAED300A2F606 /* TestSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F6F7261D7CAED300A2F606 /* TestSession.swift */; };
 		D9001E8A508FB53E96ACB838 /* Pods_frontendTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0989628B996019A8EEACD714 /* Pods_frontendTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,8 @@
 		B9F6F71D1D7BEAA500A2F606 /* AddTodoFlowControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTodoFlowControllerTests.swift; sourceTree = "<group>"; };
 		B9F6F71F1D7CAA3700A2F606 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		B9F6F7211D7CAB1300A2F606 /* PostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		B9F6F7231D7CAE8600A2F606 /* PostJSONRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostJSONRequestTests.swift; sourceTree = "<group>"; };
+		B9F6F7261D7CAED300A2F606 /* TestSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSession.swift; sourceTree = "<group>"; };
 		DA37ACF4906A26AA9BFAD3BC /* Pods-frontendTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontendTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-frontendTests/Pods-frontendTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,11 +179,13 @@
 			children = (
 				B92FE9731D766EE3007BE83E /* Info.plist */,
 				B998F3641D7BA4F70007C7F9 /* TodoConverterTests.swift */,
+				B9F6F7251D7CAECA00A2F606 /* Helpers */,
 				B9F6F71D1D7BEAA500A2F606 /* AddTodoFlowControllerTests.swift */,
 				B998F34E1D7B95310007C7F9 /* TodoCellSnapshotTests.swift */,
 				B998F3501D7B97FD0007C7F9 /* TodoTests.swift */,
 				B998F3521D7B9BC20007C7F9 /* TodoListFlowControllerTests.swift */,
 				B9F6F71B1D7BE70800A2F606 /* TodoDataSetTests.swift */,
+				B9F6F7231D7CAE8600A2F606 /* PostJSONRequestTests.swift */,
 			);
 			path = frontendTests;
 			sourceTree = "<group>";
@@ -225,6 +231,14 @@
 				B998F3461D768A950007C7F9 /* TodoTableViewDelegate.swift */,
 			);
 			name = "Todo specific stuff";
+			sourceTree = "<group>";
+		};
+		B9F6F7251D7CAECA00A2F606 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B9F6F7261D7CAED300A2F606 /* TestSession.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +470,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F6F7271D7CAED300A2F606 /* TestSession.swift in Sources */,
+				B9F6F7241D7CAE8600A2F606 /* PostJSONRequestTests.swift in Sources */,
 				B9F6F71E1D7BEAA500A2F606 /* AddTodoFlowControllerTests.swift in Sources */,
 				B9F6F71C1D7BE70800A2F606 /* TodoDataSetTests.swift in Sources */,
 				B998F3651D7BA4F70007C7F9 /* TodoConverterTests.swift in Sources */,

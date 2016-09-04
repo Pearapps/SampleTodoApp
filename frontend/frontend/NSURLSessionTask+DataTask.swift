@@ -8,4 +8,10 @@
 
 import Foundation
 
-extension NSURLSessionTask: DataTask { }
+extension NSURLSessionTask: DataTask {
+    
+    func currentURLRequest() -> NSURLRequest? {
+        return currentRequest
+    }
+    
+}

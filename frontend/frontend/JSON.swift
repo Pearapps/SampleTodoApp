@@ -13,7 +13,7 @@ protocol JSON {
 }
 
 extension JSON {
-    func toData() -> NSData {
-        return self.toJSON().dataUsingEncoding(NSUTF8StringEncoding) ?? NSData()
+    func toData() -> NSData? {
+        return self.toJSON().dataUsingEncoding(NSUTF8StringEncoding)
     }
 }

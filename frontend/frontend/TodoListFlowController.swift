@@ -53,7 +53,7 @@ final class TodoListFlowController: NSObject, AddTodoFlowControllerDelegate {
         tableViewUpdater.addModel(todo)
         
         if let URL = NSURL(string: "http://localhost:3030/add_todos") {
-            PostJSONRequest(session: URLSession, JSONBody: todo, URL: URL).task().resume()
+            PostJSONRequest(session: URLSession, JSONBody: todo, URL: URL).task({ _ in }).resume()
         }
     }
     

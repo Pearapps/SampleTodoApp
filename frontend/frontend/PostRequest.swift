@@ -14,13 +14,11 @@ struct PostJSONRequest {
     let JSONBody: JSON
     let URL: NSURL
     
-    func task() -> DataTask {
+    func task(completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> DataTask {
         let request = NSMutableURLRequest(URL: URL)
         request.HTTPBody = JSONBody.toData()
         request.HTTPMethod = "POST"
-        print(JSONBody.toJSON())
-        return session.dataTaskWithURLRequest(request, completionHandler: { (data, response, error) in
-            
-        })
+
+        return session.dataTaskWithURLRequest(request, completionHandler: completionHandler)
     }
 }
