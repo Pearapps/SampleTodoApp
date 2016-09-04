@@ -42,7 +42,7 @@ final class TodoListFlowControllerTests: FBSnapshotTestCase {
         func dispatch(f: () -> ()) { f() }
     }
     
-    func testFlowControllerooksFine() {
+    func testFlowControllerLooksFine() {
         
         let JSONs = ["[{\"todo_title\":\"Pick up groceries\",\"todo_id\":1},{\"todo_title\":\"Take out the dog\",\"todo_id\":2}]",
                      "[{\"todo_title\":\"do other things that are cool alot yo yo yo\",\"todo_id\":1},{\"todo_title\":\"do a bunch of stuff do a bunch of stuff  do a bunch of stuff  do a bunch of stuff  do a bunch of stuff  \",\"todo_id\":2}]"]
