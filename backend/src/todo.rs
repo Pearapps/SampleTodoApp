@@ -2,6 +2,7 @@ use database::*;
 
 #[derive(Debug)]
 #[derive(RustcEncodable)]
+#[derive(RustcDecodable)]
 pub struct Todo {
     pub todo_title: String,
     pub todo_id: i32,	
