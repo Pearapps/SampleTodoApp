@@ -17,7 +17,7 @@ final class AddTodoFlowControllerTests: XCTestCase {
         var hasCalledPresentViewController = false
         
         func didAddTodo(todo: Todo) {
-            
+            // Turns out this part is a little harder to test, coming back later - will probably need integration tests.
         }
         
         func presentViewController(viewController: UIViewController) {
