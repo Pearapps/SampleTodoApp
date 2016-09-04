@@ -9,4 +9,7 @@ Backend and frontend (iOS) for a very simple todo application
   - Use `cargo run --release` to run in release mode
 
 
+## Unit tests
+
+The iOS client has a test suite that covers about 76% of the lines in the whole project. There are snapshot tests and regular unit tests.
 
