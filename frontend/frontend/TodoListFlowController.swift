@@ -38,7 +38,7 @@ final class TodoListFlowController: NSObject, AddTodoFlowControllerDelegate {
         tableView.addSubview(refreshController)
         refreshController.addTarget(self, action: #selector(refresh), forControlEvents: .ValueChanged)
         
-        let viewController = ViewController(tableView: tableView)
+        let viewController = TodoViewControllerFactory(tableView: tableView).viewController()
         
         viewController.title = "Todos"
         

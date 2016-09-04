@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6808E660B5F6C8EF9AE265BE /* Pods_frontend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA5AD33C47BC9EA853B560C /* Pods_frontend.framework */; };
 		B92FE95D1D766EE3007BE83E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92FE95C1D766EE3007BE83E /* AppDelegate.swift */; };
-		B92FE95F1D766EE3007BE83E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92FE95E1D766EE3007BE83E /* ViewController.swift */; };
+		B92FE95F1D766EE3007BE83E /* TodoViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92FE95E1D766EE3007BE83E /* TodoViewControllerFactory.swift */; };
 		B92FE9621D766EE3007BE83E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92FE9601D766EE3007BE83E /* Main.storyboard */; };
 		B92FE9641D766EE3007BE83E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92FE9631D766EE3007BE83E /* Assets.xcassets */; };
 		B92FE9671D766EE3007BE83E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B92FE9651D766EE3007BE83E /* LaunchScreen.storyboard */; };
@@ -62,7 +62,7 @@
 		AAD653EACD79B719F1A7C611 /* Pods-frontendTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontendTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-frontendTests/Pods-frontendTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B92FE9591D766EE3007BE83E /* frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92FE95C1D766EE3007BE83E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B92FE95E1D766EE3007BE83E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B92FE95E1D766EE3007BE83E /* TodoViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewControllerFactory.swift; sourceTree = "<group>"; };
 		B92FE9611D766EE3007BE83E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B92FE9631D766EE3007BE83E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B92FE9661D766EE3007BE83E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -167,7 +167,6 @@
 				B998F34A1D768D420007C7F9 /* ApplicationFlowController.swift */,
 				B94BF6B01D7682250021186F /* Todo specific stuff */,
 				B92FE9851D76746F007BE83E /* Abstractions */,
-				B92FE95E1D766EE3007BE83E /* ViewController.swift */,
 				B92FE97C1D766EEB007BE83E /* Extra shit */,
 				B92FE9681D766EE3007BE83E /* Info.plist */,
 			);
@@ -229,6 +228,7 @@
 				B94BF6B31D7682750021186F /* TodoCellProvider.swift */,
 				B998F3421D7686360007C7F9 /* TodoDataSet.swift */,
 				B998F3461D768A950007C7F9 /* TodoTableViewDelegate.swift */,
+				B92FE95E1D766EE3007BE83E /* TodoViewControllerFactory.swift */,
 			);
 			name = "Todo specific stuff";
 			sourceTree = "<group>";
@@ -454,7 +454,7 @@
 				B998F35D1D7BA4700007C7F9 /* NSURLSession+Session.swift in Sources */,
 				B94BF6B41D7682750021186F /* TodoCellProvider.swift in Sources */,
 				B998F3491D768AB00007C7F9 /* BackendFetcher.swift in Sources */,
-				B92FE95F1D766EE3007BE83E /* ViewController.swift in Sources */,
+				B92FE95F1D766EE3007BE83E /* TodoViewControllerFactory.swift in Sources */,
 				B998F3571D7BA4230007C7F9 /* MainThreadAsyncDispatcher.swift in Sources */,
 				B94BF6B61D7682890021186F /* Todo.swift in Sources */,
 				B9F6F7201D7CAA3700A2F606 /* JSON.swift in Sources */,
