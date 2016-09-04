@@ -19,6 +19,12 @@ extension Todo: Hashable {
     }
 }
 
+extension Todo: JSON {
+    func toJSON() -> String {
+        return "{ \"todo_id\" : \(id), \"todo_title\" : \"\(title)\" }"
+    }
+}
+
 func ==(lhs: Todo, rhs: Todo) -> Bool {
     return lhs.id == rhs.id && rhs.title == lhs.title
 }

@@ -58,7 +58,8 @@ fn main() {
 	};
 	
 	request_router.get("/todos", get_request_handler, "todos");
-	request_router.post("/add_todos", add_todo_handler, "todos");
+	request_router.post("/add_todos", add_todo_handler, "add_todos");
 	
     	Iron::new(request_router).http("localhost:3030").unwrap();
+	
 }

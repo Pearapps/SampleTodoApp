@@ -52,7 +52,9 @@ final class TodoListFlowController: NSObject, AddTodoFlowControllerDelegate {
         // Update local cache
         tableViewUpdater.addModel(todo)
         
-        // TODO send to server
+        if let URL = NSURL(string: "http://localhost:3030/add_todos") {
+            PostJSONRequest(session: URLSession, JSONBody: todo, URL: URL).task().resume()
+        }
     }
     
     func presentViewController(viewController: UIViewController) {

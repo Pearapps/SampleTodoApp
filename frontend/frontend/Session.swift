@@ -10,5 +10,6 @@ import Foundation
 
 protocol Session {
     func dataTaskWithURL(url: NSURL, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> DataTask
+    func dataTaskWithURLRequest(request: NSURLRequest, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> DataTask
 }
 
