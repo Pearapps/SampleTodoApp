@@ -54,14 +54,17 @@ final class TodoListFlowControllerTests: FBSnapshotTestCase {
         
         for JSON in JSONs {
             for size in sizes {
+                
+                let window = UIWindow(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+
                 let navigation = UINavigationController()
                 
                 let testSession = TestSession(JSON: JSON)
                 
                 let tableView = UITableView()
                 
-                tableView.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-                
+                window.rootViewController = navigation
+                window.makeKeyAndVisible()
                 let flowController = TodoListFlowController(fetcher:
                     BackendFetcher(session: testSession,
                         URL: NSURL(),
@@ -75,11 +78,45 @@ final class TodoListFlowControllerTests: FBSnapshotTestCase {
                 
                 flowController.refresh()
                 
-                FBSnapshotVerifyView(tableView, identifier: "\(JSON.characters.count)\(size)")
+                FBSnapshotVerifyView(window, identifier: "\(JSON.characters.count)\(size)")
             }
         }
         
     }
+    
+    /// Test that an additional refresh call doesnt mess the UI up.
+    func testFlowControllerSingleRefreshLooksFine() {
+        
+        let JSON =
+        "[{\"todo_title\":\"do other things that are cool alot yo yo yo\",\"todo_id\":1},{\"todo_title\":\"do a bunch of stuff do a bunch of stuff  do a bunch of stuff  do a bunch of stuff  do a bunch of stuff  \",\"todo_id\":2}]"
+        
+        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
+        let navigation = UINavigationController()
+        
+        let testSession = TestSession(JSON: JSON)
+        
+        let tableView = UITableView()
+        
+        window.rootViewController = navigation
+        window.makeKeyAndVisible()
+        let flowController = TodoListFlowController(fetcher:
+            BackendFetcher(session: testSession,
+                URL: NSURL(),
+                converter: TodoConverter(),
+                dispatcher: TestDispatcher()),
+                                                    navigationController: navigation,
+                                                    tableView: tableView,
+                                                    URLSession: testSession)
+        
+        flowController.start(false)
+        
+        flowController.refresh()
+        flowController.refresh()
+        
+        FBSnapshotVerifyView(window)
+        
+    }
+
     
     
 }
