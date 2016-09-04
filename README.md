@@ -13,4 +13,4 @@ Backend and frontend (iOS) for a very simple todo application
 
 The iOS client has a test suite that covers about 76% of the lines in the whole project. There are snapshot tests and regular unit tests.
 
-Make sure you have `FB_REFERENCE_IMAGE_DIR=$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages` an an enviroment argument for the tests target for snapshot tests to pass.
+Make sure you have `FB_REFERENCE_IMAGE_DIR=$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages` an an enviroment argument for the tests target for snapshot tests to pass and run on an iPhone 6(s) simulator.
