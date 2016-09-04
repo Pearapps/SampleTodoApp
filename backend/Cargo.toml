@@ -1,0 +1,10 @@
+[package]
+name = "backend"
+version = "0.1.0"
+authors = ["kenny <pearapps@gmail.com>"]
+
+[dependencies]
+"rusqlite" = "*"
+"iron" = "*"
+"router" = "*"
+"rustc-serialize" = "0.3"
