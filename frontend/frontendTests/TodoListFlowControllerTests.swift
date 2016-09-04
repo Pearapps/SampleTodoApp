@@ -39,9 +39,7 @@ final class TodoListFlowControllerTests: FBSnapshotTestCase {
     }
     
     private struct TestDispatcher: CompletionHandlerDispatcher {
-        func dispatch(f: () -> ()) {
-            f()
-        }
+        func dispatch(f: () -> ()) { f() }
     }
     
     func testFlowControllerooksFine() {
