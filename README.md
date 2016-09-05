@@ -20,3 +20,4 @@ Make sure you have `FB_REFERENCE_IMAGE_DIR=$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/R
 ### Backend
 - Not scalable (uses sqlite and no caching layer)
 - Uses rust with iron framework as the web framework
+- No authentication or anything
