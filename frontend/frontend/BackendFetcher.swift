@@ -22,7 +22,7 @@ final class BackendFetcher<T, U: Converter where U.Model == T> {
         self.dispatcher = dispatcher
     }
     
-    func fetch(completion: [T] -> ()) {
+    func fetch(completion: [T] -> (), failure: () -> ()) {
         
         let task = session.dataTaskWithURL(URL) {
             if let JSON = ($0.0.flatMap { try? NSJSONSerialization.JSONObjectWithData($0, options: .AllowFragments) }) as? [[String: AnyObject]] {
@@ -30,7 +30,9 @@ final class BackendFetcher<T, U: Converter where U.Model == T> {
                     completion(self.converter.convert(JSON))
                 }
             }
-            
+            else {
+                self.dispatcher.dispatch(failure)
+            }
         }
         
         task.resume()

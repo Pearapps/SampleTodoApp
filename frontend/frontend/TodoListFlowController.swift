@@ -68,10 +68,13 @@ final class TodoListFlowController: NSObject, AddTodoFlowControllerDelegate {
     func refresh() {
         
         /// We are using `self` so we will retain ourselves until the fetch is over.
-        fetcher.fetch { (models) in
+        fetcher.fetch({ (models) in
             self.tableViewUpdater.setModels(models)
             self.refreshController.endRefreshing()
-        }
+        }, failure: {
+            self.refreshController.endRefreshing()
+            // Just ignore failures from the API for now.
+        })
     }
     
 }

@@ -96,5 +96,36 @@ final class TodoListFlowControllerTests: FBSnapshotTestCase {
     }
 
     
+    func testFlowControllerAddTodoActuallyUpdatedTableView() {
+        
+        let JSON =
+        "[{\"todo_title\":\"do other things that are cool alot yo yo yo\",\"todo_id\":1},{\"todo_title\":\"do a bunch of stuff do a bunch of stuff  do a bunch of stuff  do a bunch of stuff  do a bunch of stuff  \",\"todo_id\":2}]"
+        
+        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 320, height: 480))
+        let navigation = UINavigationController()
+        
+        let testSession = TestSession(JSON: JSON)
+        
+        let tableView = UITableView()
+        
+        window.rootViewController = navigation
+        window.makeKeyAndVisible()
+        let flowController = TodoListFlowController(fetcher:
+            BackendFetcher(session: testSession,
+                URL: NSURL(),
+                converter: TodoConverter(),
+                dispatcher: TestDispatcher()),
+                                                    navigationController: navigation,
+                                                    tableView: tableView,
+                                                    URLSession: testSession)
+        
+        flowController.start(false)
+        
+        flowController.didAddTodo(Todo(id: 2, title: "another one!"))
+        
+        FBSnapshotVerifyView(window)
+        
+    }
+    
     
 }
